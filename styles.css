@@ -1,0 +1,60 @@
+body {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    background-color: #f0f0f0;
+    margin: 0;
+    font-family: 'Arial', sans-serif;
+    background-image: url(bg.png);
+}
+
+.myCard {
+    perspective: 1000px;
+}
+
+.myCardInner {
+    position: relative;
+    width: 300px;
+    height: 400px;
+    transition: transform 0.8s;
+    transform-style: preserve-3d;
+}
+
+.myCard:hover .myCardInner {
+    transform: rotateY(180deg);
+}
+
+.myCardFront, .myCardBack {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    backface-visibility: hidden;
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+}
+
+.myCardFront {
+    background-color: #fff;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.myCardFront img {
+    border-radius: 10px;
+    max-width: 100%;
+    height: auto;
+}
+
+.myCardBack {
+    background-color: #007bff;
+    color: white;
+    transform: rotateY(180deg);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    padding: 20px;
+    box-sizing: border-box;
+}
